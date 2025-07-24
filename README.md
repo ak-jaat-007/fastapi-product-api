@@ -22,3 +22,4 @@ A small backend application to manage inventory for a small business using **Fas
 git clone https://github.com/your-repo/inventory_app.git
 cd inventory_app
 "# fastapi-product-api" 
+"# fastapi-product-api" 
