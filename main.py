@@ -158,3 +158,14 @@ def update_quantity(product_id: int, update: QuantityUpdate, db: Session = Depen
 @app.get("/products", response_model=List[ProductOut])
 def get_products(db: Session = Depends(get_db), user: User = Depends(get_current_user)):
     return db.query(Product).all()
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Inventory Management API"}
+
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
